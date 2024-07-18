@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pollutant Image Sliders</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            width: 58%; /* Set the width of the header to match the grey box */
+            display: flex;
+            justify-content: space-between;
+            align-items: center; /* Align items centrally */
+            padding: 15px 10px; /* Adjust padding for better spacing */
+            box-sizing: border-box; /* Ensures padding doesn't affect width */
+        }
+
+        .logo {
+            height: 60px;
+            margin: 0 20px; /* Adjust the margin as needed for spacing */
+        }
+
+        .right-logo {
+            height: 100px; /* Increase the height of the right logo */
+        }
+
+        .grey-box {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between; /* Ensure .grey-box and its contents align with header */
+            background-color: #f0f0f0;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 8px auto; /* Center .grey-box horizontally */
+            width: 58%; /* Match the width with the header */
+            box-sizing: border-box; /* Ensures padding doesn't affect width */
+        }
+
+        .grey-box-content {
+            flex: 1;
+            padding-right: 20px;
+            max-width: 30%;
+            font-size: 14px;
+        }
+
+        .grey-box-content p {
+            margin-bottom: 10px;
+            text-align: justify;
+        }
+
+        .highlight {
+            color: Maroon;
+            font-weight: bold;
+        }
+
+        .grey-box-image {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            max-width: 70%;
+        }
+
+        .blue-text {
+            color: black;
+            font-weight: bold;
+        }
+
+        #slider-image {
+            width: 100%;
+            margin-bottom: 6px;
+        }
+
+        .slider-buttons {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        .slider-buttons button {
+            padding: 3px 10px;
+            font-size: 12px;
+            cursor: pointer;
+        }
+
+        select {
+            display: block;
+            margin: 0x auto;
+            width: 100%; /* Set the width to 100% for full width */
+            max-width: 200px; /* Optionally set a max-width */
+        }
+    </style>
+</head>
+<body>
+<header>
+    <img src="images/IIMB-Logo.png" alt="IIMB Logo" class="logo">
+    <img src="images/JJM-logo.png" alt="JJM Logo" class="logo right-logo">
+</header>
+
+<div class="grey-box">
+    <div class="grey-box-content">
+        <p>The Jal Jeevan Mission Research Program at IIMB addresses critical issues of rural drinking water in India. We have produced effective mappings and analysis of Jal Jeevan Water Quality data.</p>
+        <p><span class="highlight">Our comprehensive water quality report includes data from over 7 lakh villages across India, encompassing around 2 million habitations. Covering water quality data for more than 30 major pollutants over 15 years (2009-2024)</span>, it is continuously updated with current data.</p>
+        <p><span class="highlight">This website presents our work on the tabular analysis and mappings generated from the Jal Jeevan data</span>.</p>
+        <label for="pollutant-select" class="blue-text"><br><br>Pollutant Maps at Village level.<br><br></label>
+        <select id="pollutant-select">
+            <option value="Arsenic">Select Pollutant</option>
+	    <option value="Arsenic">Arsenic</option>
+            <option value="Lead">Lead</option>
+            <option value="Mercury">Mercury</option>
+            <option value="Nitrate">Nitrate</option>
+            <option value="Chromium">Chromium</option>
+            <option value="Fluoride">Fluoride</option>
+            <option value="Cyanide">Cyanide</option>
+            <option value="Pesticides">Pesticides</option>
+            <option value="Herbicides">Herbicides</option>
+            <option value="Petroleum">Petroleum</option>
+            <option value="Pharmaceuticals">Pharmaceuticals</option>
+        </select>
+    </div>
+
+    <div class="grey-box-image">
+        <img id="slider-image" src="images/Arsenic/image1.png" alt="Image 1">
+        <div class="slider-buttons">
+            <button id="prev-button">Previous</button>
+            <button id="next-button">Next</button>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
