@@ -151,17 +151,9 @@
         <select id="pollutant-select">
             <option value="Iron">Select Pollutant</option>
 	    <option value="Iron">Iron</option>
-            <option value="Arsenic">Arsenic</option>
-            <option value="Lead">Lead</option>
-            <option value="Mercury">Mercury</option>
+            <option value="Total Coliform">Total Coliform</option>
             <option value="Nitrate">Nitrate</option>
-            <option value="Chromium">Chromium</option>
-            <option value="Fluoride">Fluoride</option>
-            <option value="Cyanide">Cyanide</option>
-            <option value="Pesticides">Pesticides</option>
-            <option value="Herbicides">Herbicides</option>
-            <option value="Petroleum">Petroleum</option>
-            <option value="Pharmaceuticals">Pharmaceuticals</option>
+            <option value="Residual Chlorine">Residual Chlorine</option>
         </select>
     </div>
 
@@ -188,62 +180,62 @@
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     const imagePaths = {
-        'Arsenic': [
-            'images/Arsenic/image1.png',
-            'images/Arsenic/image2.png',
-            'images/Arsenic/image3.png'
+
+        'Iron': [
+            'images/Iron/image1.png',
+            'images/Iron/image2.png',
+            'images/Iron/image3.png',
+	    'images/Iron/image4.png',
+            'images/Iron/image5.png',
+            'images/Iron/image6.png',
+	    'images/Iron/image7.png',
+            'images/Iron/image8.png',
+            'images/Iron/image9.png',
+	    'images/Iron/image10.png',
+            'images/Iron/image11.png',
+            'images/Iron/image12.png',
+	    'images/Iron/image13.png'
+
         ],
-        'Lead': [
-            'images/Lead/image1.png',
-            'images/Lead/image2.png',
-            'images/Lead/image3.png'
+        'Total Coliform': [
+            'images/Total Coliform/image1.png',
+            'images/Total Coliform/image2.png',
+            'images/Total Coliform/image3.png',
+	    'images/Total Coliform/image4.png',
+            'images/Total Coliform/image5.png',
+            'images/Total Coliform/image6.png',
+	    'images/Total Coliform/image7.png',
+            'images/Total Coliform/image8.png',
+            'images/Total Coliform/image9.png',
+	    'images/Total Coliform/image10.png',
+            'images/Total Coliform/image11.png',
+            'images/Total Coliform/image12.png',
+	    'images/Total Coliform/image13.png'
         ],
-        'Mercury': [
-            'images/Mercury/image1.png',
-            'images/Mercury/image2.png',
-            'images/Mercury/image3.png'
+
+        'Residual Chlorine': [
+            'images/Residual Chlorine/image1.png',
+            'images/Residual Chlorine/image2.png',
+            'images/Residual Chlorine/image3.png',
+	    'images/Residual Chlorine/image4.png',
+            'images/Residual Chlorine/image5.png',
+            'images/Residual Chlorine/image6.png',
+	    'images/Residual Chlorine/image7.png',
+            'images/Residual Chlorine/image8.png',
+            'images/Residual Chlorine/image9.png',
+	    'images/Residual Chlorine/image10.png',
+            'images/Residual Chlorine/image11.png',
+            'images/Residual Chlorine/image12.png',
+	    'images/Residual Chlorine/image13.png'
         ],
+
         'Nitrate': [
             'images/Nitrate/image1.png',
             'images/Nitrate/image2.png',
             'images/Nitrate/image3.png'
-        ],
-        'Chromium': [
-            'images/Chromium/image1.png',
-            'images/Chromium/image2.png',
-            'images/Chromium/image3.png'
-        ],
-        'Fluoride': [
-            'images/Fluoride/image1.png',
-            'images/Fluoride/image2.png',
-            'images/Fluoride/image3.png'
-        ],
-        'Cyanide': [
-            'images/Cyanide/image1.png',
-            'images/Cyanide/image2.png',
-            'images/Cyanide/image3.png'
-        ],
-        'Pesticides': [
-            'images/Pesticides/image1.png',
-            'images/Pesticides/image2.png',
-            'images/Pesticides/image3.png'
-        ],
-        'Herbicides': [
-            'images/Herbicides/image1.png',
-            'images/Herbicides/image2.png',
-            'images/Herbicides/image3.png'
-        ],
-        'Petroleum': [
-            'images/Petroleum/image1.png',
-            'images/Petroleum/image2.png',
-            'images/Petroleum/image3.png'
-        ],
-        'Pharmaceuticals': [
-            'images/Pharmaceuticals/image1.png',
-            'images/Pharmaceuticals/image2.png',
-            'images/Pharmaceuticals/image3.png'
-        ]
-    };
+        ]   
+
+	 };
     
     let index = 0;
     let currentPollutant = 'Iron';
