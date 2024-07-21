@@ -16,7 +16,7 @@
         }
 
         header {
-            width: 65%; /* Set the width of the header to match the grey box */
+            width: 62%; /* Set the width of the header to match the grey box */
             display: flex;
             justify-content: space-between;
             align-items: center; /* Align items centrally */
@@ -41,7 +41,7 @@
             padding: 20px;
             border-radius: 8px;
             margin: 8px auto; /* Center .grey-box horizontally */
-            width: 65%; /* Match the width with the header */
+            width: 62%; /* Match the width with the header */
             box-sizing: border-box; /* Ensures padding doesn't affect width */
         }
 
@@ -49,7 +49,7 @@
             flex: 1;
             padding-right: 20px;
             max-width: 30%;
-            font-size: 20px;
+            font-size: 19px;
         }
 
         .grey-box-content p {
@@ -150,7 +150,8 @@
         <label for="pollutant-select" class="blue-text"><br><br>Pollutant Maps at Village level.<br><br></label>
         <select id="pollutant-select">
             <option value="Iron">Select Pollutant</option>
-            <option value="Iron">Iron</option>
+	    <option value="Iron">Iron</option>
+            <option value="Arsenic">Arsenic</option>
             <option value="Lead">Lead</option>
             <option value="Mercury">Mercury</option>
             <option value="Nitrate">Nitrate</option>
@@ -187,10 +188,10 @@
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     const imagePaths = {
-        'Iron': [
-            'images/Iron/image1.png',
-            'images/Iron/image2.png',
-            'images/Iron/image3.png'
+        'Arsenic': [
+            'images/Arsenic/image1.png',
+            'images/Arsenic/image2.png',
+            'images/Arsenic/image3.png'
         ],
         'Lead': [
             'images/Lead/image1.png',
@@ -245,7 +246,7 @@ document.addEventListener('DOMContentLoaded', function() {
     };
     
     let index = 0;
-    let currentPollutant = 'Arsenic';
+    let currentPollutant = 'Iron';
     const sliderImage = document.getElementById('slider-image');
     const nextButton = document.getElementById('next-button');
     const prevButton = document.getElementById('prev-button');
