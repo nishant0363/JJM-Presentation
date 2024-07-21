@@ -16,11 +16,27 @@
         }
 
         header {
-            width: 58%; /* Set the width of the header to match the grey box */
+            width: 54%; /* Set the width of the header to match the grey box */
             display: flex;
             justify-content: space-between;
             align-items: center; /* Align items centrally */
-            padding: 15px 10px; /* Adjust padding for better spacing */
+            padding: 6px 10px; /* Adjust padding for better spacing */
+            box-sizing: border-box; /* Ensures padding doesn't affect width */
+        }
+
+	
+	footer {
+            width: 54%; /* Match the width with header and grey box */
+            text-align: center;
+            padding: 4px 10px; /* Adjust padding for better spacing */
+            font-size: 14px;
+            background-color: #FFFFFF;
+            position: fixed;
+            bottom: 0;
+	    color: Maroon;
+	    font-weight: bold;
+            left: 50%;
+            transform: translateX(-50%);
             box-sizing: border-box; /* Ensures padding doesn't affect width */
         }
 
@@ -41,7 +57,7 @@
             padding: 20px;
             border-radius: 8px;
             margin: 8px auto; /* Center .grey-box horizontally */
-            width: 58%; /* Match the width with the header */
+            width: 54%; /* Match the width with the header */
             box-sizing: border-box; /* Ensures padding doesn't affect width */
         }
 
@@ -318,7 +334,15 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+
+
 </script>
+
+<footer>
+    Nishant - Intern @ IIM Bangalore
+</footer>
+
 </body>
 </html>
 
