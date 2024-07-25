@@ -16,47 +16,46 @@
         }
 
         header {
-            width: 56%; /* Set the width of the header to match the grey box */
+            width: 56%;
             display: flex;
             justify-content: space-between;
-            align-items: center; /* Align items centrally */
-            padding: 6px 10px; /* Adjust padding for better spacing */
-            box-sizing: border-box; /* Ensures padding doesn't affect width */
+            align-items: center;
+            padding: 6px 10px;
+            box-sizing: border-box;
         }
 
-	
-	footer {
-            width: 56%; /* Match the width with header and grey box */
+        footer {
+            width: 56%;
             text-align: center;
-            padding: 4px 10px; /* Adjust padding for better spacing */
+            padding: 4px 10px;
             font-size: 14px;
             background-color: #FFFFFF;
             position: fixed;
             bottom: 0;
             left: 50%;
             transform: translateX(-50%);
-            box-sizing: border-box; /* Ensures padding doesn't affect width */
+            box-sizing: border-box;
         }
 
         .logo {
             height: 60px;
-            margin: 0 20px; /* Adjust the margin as needed for spacing */
+            margin: 0 20px;
         }
 
         .right-logo {
-            height: 100px; /* Increase the height of the right logo */
+            height: 100px;
         }
 
         .grey-box {
             display: flex;
             align-items: flex-start;
-            justify-content: space-between; /* Ensure .grey-box and its contents align with header */
+            justify-content: space-between;
             background-color: #f0f0f0;
             padding: 20px;
             border-radius: 8px;
-            margin: 8px auto; /* Center .grey-box horizontally */
-            width: 56%; /* Match the width with the header */
-            box-sizing: border-box; /* Ensures padding doesn't affect width */
+            margin: 8px auto;
+            width: 56%;
+            box-sizing: border-box;
         }
 
         .grey-box-content {
@@ -84,26 +83,26 @@
             max-width: 70%;
         }
 
-	.link-box {
-            width: 220px; /* Adjust this value as needed */
+        .link-box {
+            width: 220px;
             padding: 8px;
             font-size: 18px;
             border-radius: 4px;
             border: 1px solid #ccc;
-            margin: 6px 0; /* Even margin on top and bottom */
+            margin: 6px 0;
             display: inline-block;
-            background-color: #ffffff; /* Adjust the background color as needed */
-	}
+            background-color: #ffffff;
+        }
 
-	#pollutant-select {
-            width: 220px; /* Adjust this value as needed */
+        #pollutant-select {
+            width: 220px;
             padding: 8px;
             font-size: 18px;
             border-radius: 4px;
             border: 1px solid #ccc;
             margin-top: 6px;
-
         }
+
         .blue-text {
             color: black;
             font-weight: bold;
@@ -125,10 +124,10 @@
             font-size: 12px;
             cursor: pointer;
         }
-	
-	a.no-underline {
+
+        a.no-underline {
             text-decoration: none;
-            color: blue; /* Set your preferred color */
+            color: blue;
         }
 
         .fullscreen-container {
@@ -172,39 +171,54 @@
 
         .fullscreen-nav i:hover {
             background-color: rgba(255, 255, 255, 0.8);
+        }
 
-	}
-
-	
     </style>
 </head>
+
 <body>
+
 <header>
     <img src="images/IIMB-Logo.png" alt="IIMB Logo" class="logo">
     <img src="images/JJM-logo.png" alt="JJM Logo" class="logo right-logo">
 </header>
 
 <div class="grey-box">
+
     <div class="grey-box-content">
+
         <p>The Jal Jeevan Mission Research Program at IIMB addresses critical issues of rural drinking water in India. We have produced effective mappings and analysis of Jal Jeevan Water Quality data.</p>
         <p><span class="highlight">Our comprehensive water quality report includes data from over 7 lakh villages across India, encompassing around 2 million habitations. Covering water quality data for more than 16 major pollutants over 15 years (2009-2024)</span></p>
         <p><br></p>
+
         <label for="pollutant-select" class="blue-text">Pollutant Maps at Village level.<br></label>
+
         <select id="pollutant-select">
             <option value="Iron">Select Pollutant</option>
-	    <option value="Iron">Iron</option>
-	    <option value="Nitrate">Nitrate</option>
+            <option value="Iron">Iron</option>
+            <option value="Nitrate">Nitrate</option>
             <option value="Fluoride">Fluoride</option>
-	    <option value="Hardness">Hardness</option>
+            <option value="Hardness">Hardness</option>
+            <option value="TDS">TDS</option>
+            <option value="Residual Chlorine">Residual Chlorine</option>
+            <option value="Magnesium">Magnesium</option>
+            <option value="Chloride">Chloride</option>
+            <option value="Alkalinity">Alkalinity</option>
+            <option value="Arsenic">Arsenic</option>
+            <option value="Turbidity">Turbidity</option>
+            <option value="Sulphates">Sulphates</option>
+            <option value="Manganese">Manganese</option>
+            <option value="Calcium">Calcium</option>
             <option value="E.Coli">E.Coli</option>
+            <option value="Uranium">Uranium</option>
         </select>
-	
-	<p class="blue-text"><br>Detailed guide on JJM Data <br></p>
 
-	<div class="link-box"><a href="Merge_Data_with_Shrug.pdf" target="_blank" class="no-underline">Documentation</a>
-	</div>
+        <p class="blue-text"><br>Detailed guide on JJM Data <br></p>
 
-		
+        <div class="link-box">
+            <a href="Merge_Data_with_Shrug.pdf" target="_blank" class="no-underline">Documentation</a>
+        </div>
+
     </div>
 
     <div class="grey-box-image">
@@ -216,6 +230,7 @@
         </div>
     </div>
 
+
     <!-- Full-screen view container (initially hidden) -->
     <div id="fullscreen-container" class="fullscreen-container">
         <span id="fullscreen-close" class="fullscreen-close">Close</span>
@@ -226,93 +241,241 @@
         </div>
     </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     const imagePaths = {
-
         'Iron': [
             'images/Iron/image1.png',
             'images/Iron/image2.png',
             'images/Iron/image3.png',
-	    'images/Iron/image4.png',
+            'images/Iron/image4.png',
             'images/Iron/image5.png',
             'images/Iron/image6.png',
-	    'images/Iron/image7.png',
+            'images/Iron/image7.png',
             'images/Iron/image8.png',
             'images/Iron/image9.png',
-	    'images/Iron/image10.png',
+            'images/Iron/image10.png',
             'images/Iron/image11.png',
             'images/Iron/image12.png',
-	    'images/Iron/image13.png'
-
+            'images/Iron/image13.png'
         ],
         'Nitrate': [
             'images/Nitrate/image1.png',
             'images/Nitrate/image2.png',
             'images/Nitrate/image3.png',
-	    'images/Nitrate/image4.png',
+            'images/Nitrate/image4.png',
             'images/Nitrate/image5.png',
             'images/Nitrate/image6.png',
-	    'images/Nitrate/image7.png',
+            'images/Nitrate/image7.png',
             'images/Nitrate/image8.png',
             'images/Nitrate/image9.png',
-	    'images/Nitrate/image10.png',
+            'images/Nitrate/image10.png',
             'images/Nitrate/image11.png',
             'images/Nitrate/image12.png',
-	    'images/Nitrate/image13.png'
+            'images/Nitrate/image13.png'
         ],
-
         'Fluoride': [
             'images/Fluoride/image1.png',
             'images/Fluoride/image2.png',
             'images/Fluoride/image3.png',
-	    'images/Fluoride/image4.png',
+            'images/Fluoride/image4.png',
             'images/Fluoride/image5.png',
             'images/Fluoride/image6.png',
-	    'images/Fluoride/image7.png',
-	    'images/Fluoride/image8.png',
+            'images/Fluoride/image7.png',
+            'images/Fluoride/image8.png',
             'images/Fluoride/image9.png',
             'images/Fluoride/image10.png',
-	    'images/Fluoride/image11.png',
+            'images/Fluoride/image11.png',
             'images/Fluoride/image12.png',
             'images/Fluoride/image13.png'
         ],
-
         'E.Coli': [
             'images/E.Coli/image1.png',
             'images/E.Coli/image2.png',
             'images/E.Coli/image3.png',
-	    'images/E.Coli/image4.png',
+            'images/E.Coli/image4.png',
             'images/E.Coli/image5.png',
             'images/E.Coli/image6.png',
-	    'images/E.Coli/image7.png',
+            'images/E.Coli/image7.png',
             'images/E.Coli/image8.png',
             'images/E.Coli/image9.png',
-	    'images/E.Coli/image10.png',
+            'images/E.Coli/image10.png',
             'images/E.Coli/image11.png',
             'images/E.Coli/image12.png',
-	    'images/E.Coli/image13.png'
+            'images/E.Coli/image13.png'
         ],
-
-	'Hardness': [
+        'Hardness': [
             'images/Hardness/image1.png',
             'images/Hardness/image2.png',
             'images/Hardness/image3.png',
-	    'images/Hardness/image4.png',
+            'images/Hardness/image4.png',
             'images/Hardness/image5.png',
             'images/Hardness/image6.png',
-	    'images/Hardness/image7.png',
+            'images/Hardness/image7.png',
             'images/Hardness/image8.png',
             'images/Hardness/image9.png',
-	    'images/Hardness/image10.png',
+            'images/Hardness/image10.png',
             'images/Hardness/image11.png',
             'images/Hardness/image12.png',
-	    'images/Hardness/image13.png'
-        ]     
+            'images/Hardness/image13.png'
+        ],
+        'TDS': [
+            'images/TDS/image1.png',
+            'images/TDS/image2.png',
+            'images/TDS/image3.png',
+            'images/TDS/image4.png',
+            'images/TDS/image5.png',
+            'images/TDS/image6.png',
+            'images/TDS/image7.png',
+            'images/TDS/image8.png',
+            'images/TDS/image9.png',
+            'images/TDS/image10.png',
+            'images/TDS/image11.png',
+            'images/TDS/image12.png',
+            'images/TDS/image13.png'
+        ],
+        'Magnesium': [
+            'images/Magnesium/image1.png',
+            'images/Magnesium/image2.png',
+            'images/Magnesium/image3.png',
+            'images/Magnesium/image4.png',
+            'images/Magnesium/image5.png',
+            'images/Magnesium/image6.png',
+            'images/Magnesium/image7.png',
+            'images/Magnesium/image8.png',
+            'images/Magnesium/image9.png',
+            'images/Magnesium/image10.png',
+            'images/Magnesium/image11.png',
+            'images/Magnesium/image12.png',
+            'images/Magnesium/image13.png'
+        ],
+        'Chloride': [
+            'images/Chloride/image1.png',
+            'images/Chloride/image2.png',
+            'images/Chloride/image3.png',
+            'images/Chloride/image4.png',
+            'images/Chloride/image5.png',
+            'images/Chloride/image6.png',
+            'images/Chloride/image7.png',
+            'images/Chloride/image8.png',
+            'images/Chloride/image9.png',
+            'images/Chloride/image10.png',
+            'images/Chloride/image11.png',
+            'images/Chloride/image12.png',
+            'images/Chloride/image13.png'
+        ],
+        'Arsenic': [
+            'images/Arsenic/image1.png',
+            'images/Arsenic/image2.png',
+            'images/Arsenic/image3.png',
+            'images/Arsenic/image4.png',
+            'images/Arsenic/image5.png',
+            'images/Arsenic/image6.png',
+            'images/Arsenic/image7.png',
+            'images/Arsenic/image8.png',
+            'images/Arsenic/image9.png',
+            'images/Arsenic/image10.png',
+            'images/Arsenic/image11.png',
+            'images/Arsenic/image12.png',
+            'images/Arsenic/image13.png'
+        ],
+        'Uranium': [
+            'images/Uranium/image1.png',
+            'images/Uranium/image2.png',
+            'images/Uranium/image3.png',
+            'images/Uranium/image4.png',
+            'images/Uranium/image5.png',
+            'images/Uranium/image6.png',
+            'images/Uranium/image7.png',
+            'images/Uranium/image8.png',
+            'images/Uranium/image9.png',
+            'images/Uranium/image10.png',
+            'images/Uranium/image11.png'
+        ],
+        'Turbidity': [
+            'images/Turbidity/image1.png',
+            'images/Turbidity/image2.png',
+            'images/Turbidity/image3.png'
+        ],
+        'Sulphates': [
+            'images/Sulphates/image1.png',
+            'images/Sulphates/image2.png',
+            'images/Sulphates/image3.png',
+            'images/Sulphates/image4.png',
+            'images/Sulphates/image5.png',
+            'images/Sulphates/image6.png',
+            'images/Sulphates/image7.png',
+            'images/Sulphates/image8.png',
+            'images/Sulphates/image9.png',
+            'images/Sulphates/image10.png',
+            'images/Sulphates/image11.png',
+            'images/Sulphates/image12.png',
+            'images/Sulphates/image13.png'
+        ],
+        'Residual Chlorine': [
+            'images/Residual Chlorine/image1.png',
+            'images/Residual Chlorine/image2.png',
+            'images/Residual Chlorine/image3.png',
+            'images/Residual Chlorine/image4.png',
+            'images/Residual Chlorine/image5.png',
+            'images/Residual Chlorine/image6.png',
+            'images/Residual Chlorine/image7.png',
+            'images/Residual Chlorine/image8.png',
+            'images/Residual Chlorine/image9.png',
+            'images/Residual Chlorine/image10.png',
+            'images/Residual Chlorine/image11.png',
+            'images/Residual Chlorine/image12.png',
+            'images/Residual Chlorine/image13.png'
+        ],
+        'Manganese': [
+            'images/Manganese/image1.png',
+            'images/Manganese/image2.png',
+            'images/Manganese/image3.png',
+            'images/Manganese/image4.png',
+            'images/Manganese/image5.png',
+            'images/Manganese/image6.png',
+            'images/Manganese/image7.png',
+            'images/Manganese/image8.png',
+            'images/Manganese/image9.png',
+            'images/Manganese/image10.png',
+            'images/Manganese/image11.png',
+            'images/Manganese/image12.png',
+            'images/Manganese/image13.png'
+        ],
+        'Calcium': [
+            'images/Calcium/image1.png',
+            'images/Calcium/image2.png',
+            'images/Calcium/image3.png',
+            'images/Calcium/image4.png',
+            'images/Calcium/image5.png',
+            'images/Calcium/image6.png',
+            'images/Calcium/image7.png',
+            'images/Calcium/image8.png',
+            'images/Calcium/image9.png',
+            'images/Calcium/image10.png',
+            'images/Calcium/image11.png',
+            'images/Calcium/image12.png',
+            'images/Calcium/image13.png'
+        ],
+        'Alkalinity': [
+            'images/Alkalinity/image1.png',
+            'images/Alkalinity/image2.png',
+            'images/Alkalinity/image3.png',
+            'images/Alkalinity/image4.png',
+            'images/Alkalinity/image5.png',
+            'images/Alkalinity/image6.png',
+            'images/Alkalinity/image7.png',
+            'images/Alkalinity/image8.png',
+            'images/Alkalinity/image9.png',
+            'images/Alkalinity/image10.png',
+            'images/Alkalinity/image11.png',
+            'images/Alkalinity/image12.png',
+            'images/Alkalinity/image13.png'
+        ]
+    	
+	};
 
-	 };
-    
     let index = 0;
     let currentPollutant = 'Iron';
     const sliderImage = document.getElementById('slider-image');
@@ -396,4 +559,3 @@ document.addEventListener('DOMContentLoaded', function() {
 
 </body>
 </html>
-
