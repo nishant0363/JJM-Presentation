@@ -148,8 +148,10 @@
         .fullscreen-nav i:hover {
             background-color: rgba(255, 255, 255, 0.8);
 
+	}
+
 	#pollutant-select {
-            width: 100%;
+            width: 220px; /* Adjust this value as needed */
             padding: 8px;
             font-size: 18px;
             border-radius: 4px;
@@ -168,9 +170,9 @@
 <div class="grey-box">
     <div class="grey-box-content">
         <p>The Jal Jeevan Mission Research Program at IIMB addresses critical issues of rural drinking water in India. We have produced effective mappings and analysis of Jal Jeevan Water Quality data.</p>
-        <p><span class="highlight">Our comprehensive water quality report includes data from over 7 lakh villages across India, encompassing around 2 million habitations. Covering water quality data for more than 30 major pollutants over 15 years (2009-2024)</span>, it is continuously updated with current data.</p>
-        <p><span class="highlight">This website presents our work on the tabular analysis and mappings generated from the Jal Jeevan data</span>.</p>
-        <label for="pollutant-select" class="blue-text"><br><br>Pollutant Maps at Village level.<br><br></label>
+        <p><span class="highlight">Our comprehensive water quality report includes data from over 7 lakh villages across India, encompassing around 2 million habitations. Covering water quality data for more than 16 major pollutants over 15 years (2009-2024)</span></p>
+        <p><br><br></p>
+        <label for="pollutant-select" class="blue-text">Pollutant Maps at Village level.<br></label>
         <select id="pollutant-select">
             <option value="Iron">Select Pollutant</option>
 	    <option value="Iron">Iron</option>
@@ -179,6 +181,11 @@
 	    <option value="Hardness">Hardness</option>
             <option value="E.Coli">E.Coli</option>
         </select>
+
+	<p><br>Comprehensive documentation of data collection, preprocessing, and addressing common issues such as data format inconsistencies, missing files, and contaminant data. This ensures the dataset is clean, consistent, and ready for analysis. 
+<a href="Merge_Data_with_Shrug.pdf" target="_blank">Documentation</a></p>
+
+	
     </div>
 
     <div class="grey-box-image">
@@ -365,6 +372,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 </script>
+
+
 
 </body>
 </html>
