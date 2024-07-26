@@ -82,21 +82,6 @@
             justify-content: flex-start;
             max-width: 70%;
         }
-	
-
-	.grey-box-pdf {
-    	    display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: flex-start;
-            max-width: 70%;
-	
-	}
-
-	
-	.grey-box-pdf iframe {
-   	   border: none;
-	}
 
         .link-box {
             width: 220px;
@@ -118,25 +103,9 @@
             margin-top: 6px;
         }
 
-	#pdf-select {
-            width: 220px;
-            padding: 8px;
-            font-size: 18px;
-            border-radius: 4px;
-            border: 1px solid #ccc;
-            margin-top: 6px;
-        }
-
-
         .blue-text {
             color: black;
             font-weight: bold;
-        }
-
-	.Dblue-text {
-            color: navy;
-            font-weight: bold;
-
         }
 
         #slider-image {
@@ -158,8 +127,7 @@
 
         a.no-underline {
             text-decoration: none;
-            color: navy;
-	    font-weight: bold;
+            color: blue;
         }
 
         .fullscreen-container {
@@ -205,8 +173,6 @@
             background-color: rgba(255, 255, 255, 0.8);
         }
 
-	
-
     </style>
 </head>
 
@@ -250,8 +216,8 @@
 
         <p class="blue-text"><br>Detailed guide to JJM Data <br></p>
 
-        <div class="link-box" >
-            <a href="#pdf-section" class="no-underline">Documentation</a>
+        <div class="link-box">
+            <a href="JJM_Water_Quality_Data_Collection_and_Preprocessing.pdf" target="_blank" class="no-underline">Documentation</a>
         </div>
 
     </div>
@@ -275,43 +241,6 @@
             <i id="fullscreen-next" class="fas fa-chevron-right"></i>
         </div>
     </div>
-</div>
-
-<br><br><br><br><br>
-<div class="grey-box" >
-    <div class="grey-box-content" id="pdf-section">
-        <p><span class="highlight">To ensure that dataset is clean, consistent, and ready for analysis following steps were perfomed.<br></span></p>
-	<p class="Dblue-text">
-	<br>1. JJM Data collection
-	<br>2. Preprocessing
-	<br>3. Addressing format issues 
-	<br>4. Ensuring no missing files
-	<br>
-	<br></p>
-        
-        <label for="pdf-select" class="blue-text">Select the Steps to refer to its Documentation:<br><br></label>
-        <select id="pdf-select">
-            <option value="">Select Step</option>
-            <option value="JJM_Water_Quality_Data_Collection_and_Preprocessing.pdf">JJM Data collection</option>
-            <option value="JJM_Water_Quality_Data_Collection_and_Preprocessing.pdf">Preprocessing</option>
-            <option value="JJM_Water_Quality_Data_Collection_and_Preprocessing.pdf">Addressing format issues</option>
-            <option value="JJM_Water_Quality_Data_Collection_and_Preprocessing.pdf">Ensuring no missing files</option>
-            <option value="JJM_Water_Quality_Data_Collection_and_Preprocessing.pdf">Summary</option>
-        </select>
-        
-    </div>
-    
-    <div class="grey-box-pdf">
-	<br>
-        <iframe id="pdf-viewer" src="" width="710px" height="640px" frameborder=none></iframe>
-	<br>
-	<br>
-	<br>
-	<br>
-    </div>
-
-
-</div>
 
 
 <script>
@@ -637,42 +566,13 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
     });
-
-    // PDF viewer functionality
-    const pdfViewer = document.getElementById('pdf-viewer');
-    const pdfSelect = document.getElementById('pdf-select');
-
-    // Get the first PDF option
-    const firstPdfOption = pdfSelect.options[1]; // Index 1 for the first option
-
-    // Set the default PDF and display it
-    pdfSelect.value = firstPdfOption.value;
-    pdfViewer.src = firstPdfOption.value + '#toolbar=0';
-    pdfViewer.style.display = 'block';
-
-    pdfSelect.addEventListener('change', function() {
-        const selectedPdf = pdfSelect.value;
-        if (selectedPdf) {
-            pdfViewer.src = selectedPdf + '#toolbar=0';
-            pdfViewer.style.display = 'block';
-        } else {
-            pdfViewer.style.display = 'none';
-        }
-    });
-
-    // Remove the PDF header
-    const pdfEmbed = pdfViewer.querySelector('embed');
-    if (pdfEmbed) {
-        pdfEmbed.removeAttribute('toolbar');
-    }
 });
+
+
 
 </script>
 
-<footer>
-	<br>
-	<br>
-</footer>
+
 
 </body>
 </html>
