@@ -315,11 +315,10 @@
 	<br>
 	<br>
 	<br>
-
-
-	<div class="link-box" >
-            <a href="#pdf-section" class="no-underline">Python Code</a>
-        </div>
+	
+	<div class="link-box">
+    		<a href="#" id="open-pdf" class="no-underline">Python Code</a>
+	</div>
 
 	<div class="link-box" >
             <a href="#pdf-section1" class="no-underline">Back</a>
@@ -693,6 +692,12 @@ document.addEventListener('DOMContentLoaded', function() {
     if (pdfEmbed) {
         pdfEmbed.removeAttribute('toolbar');
     }
+
+    document.getElementById('open-pdf').addEventListener('click', function(event) {
+    event.preventDefault(); // Prevent the default link behavior
+    const pdfViewer = document.getElementById('pdf-viewer');
+    pdfViewer.src = 'JJM_Data_Python_Code.pdf#toolbar=0'; // Set the iframe source to the PDF file
+});
 });
 
 </script>
