@@ -16,40 +16,53 @@
         }
 
         header {
-            width: 65%; /* Set the width of the header to match the grey box */
+            width: 56%;
             display: flex;
             justify-content: space-between;
-            align-items: center; /* Align items centrally */
-            padding: 15px 10px; /* Adjust padding for better spacing */
-            box-sizing: border-box; /* Ensures padding doesn't affect width */
+            align-items: center;
+            padding: 6px 10px;
+            box-sizing: border-box;
+        }
+
+        footer {
+            width: 56%;
+            text-align: center;
+            padding: 4px 10px;
+            font-size: 14px;
+            background-color: #FFFFFF;
+            position: fixed;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            box-sizing: border-box;
         }
 
         .logo {
             height: 60px;
-            margin: 0 20px; /* Adjust the margin as needed for spacing */
+            margin: 0 20px;
         }
 
         .right-logo {
-            height: 100px; /* Increase the height of the right logo */
+            height: 100px;
         }
 
         .grey-box {
             display: flex;
             align-items: flex-start;
-            justify-content: space-between; /* Ensure .grey-box and its contents align with header */
+            justify-content: space-between;
             background-color: #f0f0f0;
             padding: 20px;
             border-radius: 8px;
-            margin: 8px auto; /* Center .grey-box horizontally */
-            width: 65%; /* Match the width with the header */
-            box-sizing: border-box; /* Ensures padding doesn't affect width */
+            margin: 8px auto;
+            width: 56%;
+            box-sizing: border-box;
         }
 
         .grey-box-content {
             flex: 1;
             padding-right: 20px;
             max-width: 30%;
-            font-size: 20px;
+            font-size: 18px;
         }
 
         .grey-box-content p {
@@ -69,15 +82,66 @@
             justify-content: flex-start;
             max-width: 70%;
         }
+	
+
+	.grey-box-pdf {
+    	    display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            max-width: 70%;
+	
+	}
+
+	
+	.grey-box-pdf iframe {
+   	   border: none;
+	}
+
+        .link-box {
+            width: 220px;
+            padding: 8px;
+            font-size: 18px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            margin: 6px 0;
+            display: inline-block;
+            background-color: #ffffff;
+        }
+
+        #pollutant-select {
+            width: 220px;
+            padding: 8px;
+            font-size: 18px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            margin-top: 6px;
+        }
+
+	#pdf-select {
+            width: 220px;
+            padding: 8px;
+            font-size: 18px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            margin-top: 6px;
+        }
+
 
         .blue-text {
             color: black;
             font-weight: bold;
         }
 
+	.Dblue-text {
+            color: navy;
+            font-weight: bold;
+
+        }
+
         #slider-image {
             width: 100%;
-            margin-bottom: 6px;
+            margin-bottom: 16px;
         }
 
         .slider-buttons {
@@ -90,6 +154,12 @@
             padding: 3px 10px;
             font-size: 12px;
             cursor: pointer;
+        }
+
+        a.no-underline {
+            text-decoration: none;
+            color: navy;
+	    font-weight: bold;
         }
 
         .fullscreen-container {
@@ -134,34 +204,86 @@
         .fullscreen-nav i:hover {
             background-color: rgba(255, 255, 255, 0.8);
         }
+	
+        #fullscreen-pdf-container {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #fullscreen-pdf-container iframe {
+            width: 90%;
+            height: 90%;
+        }
+
+        #fullscreen-pdf-close {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 24px;
+            color: white;
+            cursor: pointer;
+        }
+	
+
     </style>
 </head>
+
 <body>
-<header>
+
+<header id="pdf-section1">
     <img src="images/IIMB-Logo.png" alt="IIMB Logo" class="logo">
     <img src="images/JJM-logo.png" alt="JJM Logo" class="logo right-logo">
 </header>
 
 <div class="grey-box">
+
     <div class="grey-box-content">
+
         <p>The Jal Jeevan Mission Research Program at IIMB addresses critical issues of rural drinking water in India. We have produced effective mappings and analysis of Jal Jeevan Water Quality data.</p>
-        <p><span class="highlight">Our comprehensive water quality report includes data from over 7 lakh villages across India, encompassing around 2 million habitations. Covering water quality data for more than 30 major pollutants over 15 years (2009-2024)</span>, it is continuously updated with current data.</p>
-        <p><span class="highlight">This website presents our work on the tabular analysis and mappings generated from the Jal Jeevan data</span>.</p>
-        <label for="pollutant-select" class="blue-text"><br><br>Pollutant Maps at Village level.<br><br></label>
+        <p><span class="highlight">Our comprehensive water quality report includes data from over 7 lakh villages across India, encompassing around 2 million habitations. Covering water quality data for more than 16 major pollutants over 15 years (2009-2024)</span></p>
+        <p><br></p>
+
+        <label for="pollutant-select" class="blue-text">Pollutant Maps at Village level.<br></label>
+
         <select id="pollutant-select">
             <option value="Iron">Select Pollutant</option>
             <option value="Iron">Iron</option>
-            <option value="Lead">Lead</option>
-            <option value="Mercury">Mercury</option>
             <option value="Nitrate">Nitrate</option>
-            <option value="Chromium">Chromium</option>
             <option value="Fluoride">Fluoride</option>
-            <option value="Cyanide">Cyanide</option>
-            <option value="Pesticides">Pesticides</option>
-            <option value="Herbicides">Herbicides</option>
-            <option value="Petroleum">Petroleum</option>
-            <option value="Pharmaceuticals">Pharmaceuticals</option>
+            <option value="Hardness">Hardness</option>
+            <option value="TDS">TDS</option>
+            <option value="Residual Chlorine">Residual Chlorine</option>
+            <option value="Magnesium">Magnesium</option>
+            <option value="Chloride">Chloride</option>
+            <option value="Alkalinity">Alkalinity</option>
+            <option value="Arsenic">Arsenic</option>
+            <option value="Turbidity">Turbidity</option>
+            <option value="Sulphates">Sulphates</option>
+            <option value="Manganese">Manganese</option>
+            <option value="Calcium">Calcium</option>
+            <option value="E.Coli">E.Coli</option>
+            <option value="Total Coliform">Total Coliform</option>
+            <option value="Uranium">Uranium</option>
         </select>
+
+        <p class="blue-text">Detailed guide to JJM Data</p>
+
+        <div class="link-box" >
+            <a href="#pdf-section2" class="no-underline">Documentation</a>
+        </div>
+
+	<div class="link-box" >
+            <a href="#pdf-section2" class="no-underline">Spatial analysis and correlation of water quality data</a>
+        </div>
+
     </div>
 
     <div class="grey-box-image">
@@ -173,6 +295,7 @@
         </div>
     </div>
 
+
     <!-- Full-screen view container (initially hidden) -->
     <div id="fullscreen-container" class="fullscreen-container">
         <span id="fullscreen-close" class="fullscreen-close">Close</span>
@@ -182,70 +305,320 @@
             <i id="fullscreen-next" class="fas fa-chevron-right"></i>
         </div>
     </div>
+</div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+<br><br><br><br><br>
+<header id="pdf-section2">
+    <img src="images/IIMB-Logo.png" alt="IIMB Logo" class="logo">
+    <img src="images/JJM-logo.png" alt="JJM Logo" class="logo right-logo">
+</header>
+
+<div class="grey-box" >
+    <div class="grey-box-content" >
+        <p><span class="highlight">To ensure that dataset is clean, consistent, and ready for analysis following steps were perfomed.<br></span></p>
+	<p class="Dblue-text">
+	<br>1. JJM Data collection
+	<br>2. Preprocessing
+	<br>3. Ensuring no missing files 
+	<br>4. Fuzzy Matching
+	<br>
+	<br></p>
+        
+        <label for="pdf-select" class="blue-text">Select the Steps to refer to its Documentation:<br><br></label>
+        <select id="pdf-select">
+            <option value="">Select Step</option>
+            <option value="JJM_Data_Collection_.pdf">JJM Data collection</option>
+            <option value="JJM_Data_Preprocessing.pdf">Preprocessing</option>
+            <option value="JJM_Data_Completion.pdf">Data Completion</option>
+            <option value="JJM_Data_Fuzzy_Matching.pdf">Fuzzy Matching</option>
+        
+        </select>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	
+	<div class="link-box">
+    		<a href="#" id="open-pdf" class="no-underline">Python Code</a>
+	</div>
+
+	<div class="link-box" >
+            <a href="#pdf-section1" class="no-underline">Back</a>
+        </div>
+
+	<div class="link-box" >
+            <a href="#" id="fullscreen-pdf-button" class="no-underline">Fullscreen</a>
+        </div>
+        
+    </div>
+    
+    <div class="grey-box-pdf">
+	<br>
+        <iframe id="pdf-viewer" src="" width="710px" height="640px" frameborder=none></iframe>
+	<br>
+	<br>
+    </div>
+
+
+</div>
+
+
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     const imagePaths = {
         'Iron': [
             'images/Iron/image1.png',
             'images/Iron/image2.png',
-            'images/Iron/image3.png'
-        ],
-        'Lead': [
-            'images/Lead/image1.png',
-            'images/Lead/image2.png',
-            'images/Lead/image3.png'
-        ],
-        'Mercury': [
-            'images/Mercury/image1.png',
-            'images/Mercury/image2.png',
-            'images/Mercury/image3.png'
+            'images/Iron/image3.png',
+            'images/Iron/image4.png',
+            'images/Iron/image5.png',
+            'images/Iron/image6.png',
+            'images/Iron/image7.png',
+            'images/Iron/image8.png',
+            'images/Iron/image9.png',
+            'images/Iron/image10.png',
+            'images/Iron/image11.png',
+            'images/Iron/image12.png',
+            'images/Iron/image13.png'
         ],
         'Nitrate': [
             'images/Nitrate/image1.png',
             'images/Nitrate/image2.png',
-            'images/Nitrate/image3.png'
-        ],
-        'Chromium': [
-            'images/Chromium/image1.png',
-            'images/Chromium/image2.png',
-            'images/Chromium/image3.png'
+            'images/Nitrate/image3.png',
+            'images/Nitrate/image4.png',
+            'images/Nitrate/image5.png',
+            'images/Nitrate/image6.png',
+            'images/Nitrate/image7.png',
+            'images/Nitrate/image8.png',
+            'images/Nitrate/image9.png',
+            'images/Nitrate/image10.png',
+            'images/Nitrate/image11.png',
+            'images/Nitrate/image12.png',
+            'images/Nitrate/image13.png'
         ],
         'Fluoride': [
             'images/Fluoride/image1.png',
             'images/Fluoride/image2.png',
-            'images/Fluoride/image3.png'
+            'images/Fluoride/image3.png',
+            'images/Fluoride/image4.png',
+            'images/Fluoride/image5.png',
+            'images/Fluoride/image6.png',
+            'images/Fluoride/image7.png',
+            'images/Fluoride/image8.png',
+            'images/Fluoride/image9.png',
+            'images/Fluoride/image10.png',
+            'images/Fluoride/image11.png',
+            'images/Fluoride/image12.png',
+            'images/Fluoride/image13.png'
         ],
-        'Cyanide': [
-            'images/Cyanide/image1.png',
-            'images/Cyanide/image2.png',
-            'images/Cyanide/image3.png'
+        'E.Coli': [
+            'images/E.Coli/image1.png',
+            'images/E.Coli/image2.png',
+            'images/E.Coli/image3.png',
+            'images/E.Coli/image4.png',
+            'images/E.Coli/image5.png',
+            'images/E.Coli/image6.png',
+            'images/E.Coli/image7.png',
+            'images/E.Coli/image8.png',
+            'images/E.Coli/image9.png',
+            'images/E.Coli/image10.png',
+            'images/E.Coli/image11.png',
+            'images/E.Coli/image12.png',
+            'images/E.Coli/image13.png'
         ],
-        'Pesticides': [
-            'images/Pesticides/image1.png',
-            'images/Pesticides/image2.png',
-            'images/Pesticides/image3.png'
+        'Hardness': [
+            'images/Hardness/image1.png',
+            'images/Hardness/image2.png',
+            'images/Hardness/image3.png',
+            'images/Hardness/image4.png',
+            'images/Hardness/image5.png',
+            'images/Hardness/image6.png',
+            'images/Hardness/image7.png',
+            'images/Hardness/image8.png',
+            'images/Hardness/image9.png',
+            'images/Hardness/image10.png',
+            'images/Hardness/image11.png',
+            'images/Hardness/image12.png',
+            'images/Hardness/image13.png'
         ],
-        'Herbicides': [
-            'images/Herbicides/image1.png',
-            'images/Herbicides/image2.png',
-            'images/Herbicides/image3.png'
+        'TDS': [
+            'images/TDS/image1.png',
+            'images/TDS/image2.png',
+            'images/TDS/image3.png',
+            'images/TDS/image4.png',
+            'images/TDS/image5.png',
+            'images/TDS/image6.png',
+            'images/TDS/image7.png',
+            'images/TDS/image8.png',
+            'images/TDS/image9.png',
+            'images/TDS/image10.png',
+            'images/TDS/image11.png',
+            'images/TDS/image12.png',
+            'images/TDS/image13.png'
         ],
-        'Petroleum': [
-            'images/Petroleum/image1.png',
-            'images/Petroleum/image2.png',
-            'images/Petroleum/image3.png'
+        'Magnesium': [
+            'images/Magnesium/image1.png',
+            'images/Magnesium/image2.png',
+            'images/Magnesium/image3.png',
+            'images/Magnesium/image4.png',
+            'images/Magnesium/image5.png',
+            'images/Magnesium/image6.png',
+            'images/Magnesium/image7.png',
+            'images/Magnesium/image8.png',
+            'images/Magnesium/image9.png',
+            'images/Magnesium/image10.png',
+            'images/Magnesium/image11.png',
+            'images/Magnesium/image12.png',
+            'images/Magnesium/image13.png'
         ],
-        'Pharmaceuticals': [
-            'images/Pharmaceuticals/image1.png',
-            'images/Pharmaceuticals/image2.png',
-            'images/Pharmaceuticals/image3.png'
+        'Chloride': [
+            'images/Chloride/image1.png',
+            'images/Chloride/image2.png',
+            'images/Chloride/image3.png',
+            'images/Chloride/image4.png',
+            'images/Chloride/image5.png',
+            'images/Chloride/image6.png',
+            'images/Chloride/image7.png',
+            'images/Chloride/image8.png',
+            'images/Chloride/image9.png',
+            'images/Chloride/image10.png',
+            'images/Chloride/image11.png',
+            'images/Chloride/image12.png',
+            'images/Chloride/image13.png'
+        ],
+        'Arsenic': [
+            'images/Arsenic/image1.png',
+            'images/Arsenic/image2.png',
+            'images/Arsenic/image3.png',
+            'images/Arsenic/image4.png',
+            'images/Arsenic/image5.png',
+            'images/Arsenic/image6.png',
+            'images/Arsenic/image7.png',
+            'images/Arsenic/image8.png',
+            'images/Arsenic/image9.png',
+            'images/Arsenic/image10.png',
+            'images/Arsenic/image11.png',
+            'images/Arsenic/image12.png',
+            'images/Arsenic/image13.png'
+        ],
+        'Uranium': [
+            'images/Uranium/image1.png',
+            'images/Uranium/image2.png',
+            'images/Uranium/image3.png',
+            'images/Uranium/image4.png',
+            'images/Uranium/image5.png',
+            'images/Uranium/image6.png',
+            'images/Uranium/image7.png',
+            'images/Uranium/image8.png',
+            'images/Uranium/image9.png',
+            'images/Uranium/image10.png',
+            'images/Uranium/image11.png'
+        ],
+        'Turbidity': [
+            'images/Turbidity/image1.png',
+            'images/Turbidity/image2.png',
+            'images/Turbidity/image3.png'
+        ],
+        'Sulphates': [
+            'images/Sulphates/image1.png',
+            'images/Sulphates/image2.png',
+            'images/Sulphates/image3.png',
+            'images/Sulphates/image4.png',
+            'images/Sulphates/image5.png',
+            'images/Sulphates/image6.png',
+            'images/Sulphates/image7.png',
+            'images/Sulphates/image8.png',
+            'images/Sulphates/image9.png',
+            'images/Sulphates/image10.png',
+            'images/Sulphates/image11.png',
+            'images/Sulphates/image12.png',
+            'images/Sulphates/image13.png'
+        ],
+        'Residual Chlorine': [
+            'images/Residual Chlorine/image1.png',
+            'images/Residual Chlorine/image2.png',
+            'images/Residual Chlorine/image3.png',
+            'images/Residual Chlorine/image4.png',
+            'images/Residual Chlorine/image5.png',
+            'images/Residual Chlorine/image6.png',
+            'images/Residual Chlorine/image7.png',
+            'images/Residual Chlorine/image8.png',
+            'images/Residual Chlorine/image9.png',
+            'images/Residual Chlorine/image10.png',
+            'images/Residual Chlorine/image11.png',
+            'images/Residual Chlorine/image12.png',
+            'images/Residual Chlorine/image13.png'
+        ],
+        'Manganese': [
+            'images/Manganese/image1.png',
+            'images/Manganese/image2.png',
+            'images/Manganese/image3.png',
+            'images/Manganese/image4.png',
+            'images/Manganese/image5.png',
+            'images/Manganese/image6.png',
+            'images/Manganese/image7.png',
+            'images/Manganese/image8.png',
+            'images/Manganese/image9.png',
+            'images/Manganese/image10.png',
+            'images/Manganese/image11.png',
+            'images/Manganese/image12.png',
+            'images/Manganese/image13.png'
+        ],
+        'Calcium': [
+            'images/Calcium/image1.png',
+            'images/Calcium/image2.png',
+            'images/Calcium/image3.png',
+            'images/Calcium/image4.png',
+            'images/Calcium/image5.png',
+            'images/Calcium/image6.png',
+            'images/Calcium/image7.png',
+            'images/Calcium/image8.png',
+            'images/Calcium/image9.png',
+            'images/Calcium/image10.png',
+            'images/Calcium/image11.png',
+            'images/Calcium/image12.png',
+            'images/Calcium/image13.png'
+        ],
+        'Alkalinity': [
+            'images/Alkalinity/image1.png',
+            'images/Alkalinity/image2.png',
+            'images/Alkalinity/image3.png',
+            'images/Alkalinity/image4.png',
+            'images/Alkalinity/image5.png',
+            'images/Alkalinity/image6.png',
+            'images/Alkalinity/image7.png',
+            'images/Alkalinity/image8.png',
+            'images/Alkalinity/image9.png',
+            'images/Alkalinity/image10.png',
+            'images/Alkalinity/image11.png',
+            'images/Alkalinity/image12.png',
+            'images/Alkalinity/image13.png'
+        ],
+        'Total Coliform': [
+            'images/Total Coliform/image1.png',
+            'images/Total Coliform/image2.png',
+            'images/Total Coliform/image3.png',
+            'images/Total Coliform/image4.png',
+            'images/Total Coliform/image5.png',
+            'images/Total Coliform/image6.png',
+            'images/Total Coliform/image7.png',
+            'images/Total Coliform/image8.png',
+            'images/Total Coliform/image9.png',
+            'images/Total Coliform/image10.png',
+            'images/Total Coliform/image11.png',
+            'images/Total Coliform/image12.png',
+            'images/Total Coliform/image13.png'
         ]
-    };
-    
+
+    	
+	};
+
     let index = 0;
-    let currentPollutant = 'Arsenic';
+    let currentPollutant = 'Iron';
     const sliderImage = document.getElementById('slider-image');
     const nextButton = document.getElementById('next-button');
     const prevButton = document.getElementById('prev-button');
@@ -317,8 +690,71 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
     });
+
+    // PDF viewer functionality
+    const pdfViewer = document.getElementById('pdf-viewer');
+    const pdfSelect = document.getElementById('pdf-select');
+
+    // Get the first PDF option
+    const firstPdfOption = pdfSelect.options[1]; // Index 1 for the first option
+
+    // Set the default PDF and display it
+    pdfSelect.value = firstPdfOption.value;
+    pdfViewer.src = firstPdfOption.value + '#toolbar=0';
+    pdfViewer.style.display = 'block';
+
+    pdfSelect.addEventListener('change', function() {
+        const selectedPdf = pdfSelect.value;
+        if (selectedPdf) {
+            pdfViewer.src = selectedPdf + '#toolbar=0';
+            pdfViewer.style.display = 'block';
+        } else {
+            pdfViewer.style.display = 'none';
+        }
+    });
+
+
+    const fullscreenPdfButton = document.getElementById('fullscreen-pdf-button');
+    const fullscreenPdfContainer = document.createElement('div');
+    fullscreenPdfContainer.id = 'fullscreen-pdf-container';
+    fullscreenPdfContainer.innerHTML = `
+        <iframe id="fullscreen-pdf-viewer" src="" frameborder="0"></iframe>
+        <span id="fullscreen-pdf-close">&times;</span>
+    `;
+    document.body.appendChild(fullscreenPdfContainer);
+
+    fullscreenPdfButton.addEventListener('click', function() {
+        const pdfViewerSrc = document.getElementById('pdf-viewer').src;
+        document.getElementById('fullscreen-pdf-viewer').src = pdfViewerSrc;
+        fullscreenPdfContainer.style.display = 'flex';
+    });
+
+    document.getElementById('fullscreen-pdf-close').addEventListener('click', function() {
+        fullscreenPdfContainer.style.display = 'none';
+    });
+
+
+
+
+    // Remove the PDF header
+    const pdfEmbed = pdfViewer.querySelector('embed');
+    if (pdfEmbed) {
+        pdfEmbed.removeAttribute('toolbar');
+    }
+
+    document.getElementById('open-pdf').addEventListener('click', function(event) {
+    event.preventDefault(); // Prevent the default link behavior
+    const pdfViewer = document.getElementById('pdf-viewer');
+    pdfViewer.src = 'JJM_Data_Python_Code.pdf#toolbar=0'; // Set the iframe source to the PDF file
 });
+});
+
 </script>
+
+<footer>
+	<br>
+	<br>
+</footer>
+
 </body>
 </html>
-

@@ -205,7 +205,32 @@
             background-color: rgba(255, 255, 255, 0.8);
         }
 	
+        #fullscreen-pdf-container {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
 
+        #fullscreen-pdf-container iframe {
+            width: 90%;
+            height: 90%;
+        }
+
+        #fullscreen-pdf-close {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 24px;
+            color: white;
+            cursor: pointer;
+        }
 	
 
     </style>
@@ -326,7 +351,7 @@
         </div>
 
 	<div class="link-box" >
-            <a href="#pdf-section1" class="no-underline">Fullscreen</a>
+            <a href="#" id="fullscreen-pdf-button" class="no-underline">Fullscreen</a>
         </div>
         
     </div>
@@ -687,6 +712,29 @@ document.addEventListener('DOMContentLoaded', function() {
             pdfViewer.style.display = 'none';
         }
     });
+
+
+    const fullscreenPdfButton = document.getElementById('fullscreen-pdf-button');
+    const fullscreenPdfContainer = document.createElement('div');
+    fullscreenPdfContainer.id = 'fullscreen-pdf-container';
+    fullscreenPdfContainer.innerHTML = `
+        <iframe id="fullscreen-pdf-viewer" src="" frameborder="0"></iframe>
+        <span id="fullscreen-pdf-close">&times;</span>
+    `;
+    document.body.appendChild(fullscreenPdfContainer);
+
+    fullscreenPdfButton.addEventListener('click', function() {
+        const pdfViewerSrc = document.getElementById('pdf-viewer').src;
+        document.getElementById('fullscreen-pdf-viewer').src = pdfViewerSrc;
+        fullscreenPdfContainer.style.display = 'flex';
+    });
+
+    document.getElementById('fullscreen-pdf-close').addEventListener('click', function() {
+        fullscreenPdfContainer.style.display = 'none';
+    });
+
+
+
 
     // Remove the PDF header
     const pdfEmbed = pdfViewer.querySelector('embed');
