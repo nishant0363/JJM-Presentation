@@ -205,33 +205,53 @@
             background-color: rgba(255, 255, 255, 0.8);
         }
 	
-        #fullscreen-pdf-container {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.9);
-            z-index: 1000;
-            justify-content: center;
-            align-items: center;
-        }
+
+	
+#fullscreen-pdf-container {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
 
         #fullscreen-pdf-container iframe {
-            width: 800px;
-            height: 900px;
+            width: 99%;
+            height: 99%;
         }
 
-        #fullscreen-pdf-close {
-            position: absolute;
-            top: 10px;
-            right: 60px;
-            font-size: 44px;
-            color: white;
-            cursor: pointer;
-        }
-	
+#fullscreen-pdf-close {
+    position: absolute;
+    top: 10px;
+    right: 60px;
+    font-size: 44px;
+    color: white;
+    cursor: pointer;
+}
+
+#zoom-in, #zoom-out {
+    position: absolute;
+    top: 10px;
+    left: 60px;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 5px;
+    margin-right: 10px;
+    border-radius: 5px;
+}
+
+#zoom-out {
+    left: 120px;
+}
+
 
     </style>
 </head>
@@ -691,47 +711,78 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // PDF viewer functionality
-    const pdfViewer = document.getElementById('pdf-viewer');
-    const pdfSelect = document.getElementById('pdf-select');
-
-    // Get the first PDF option
-    const firstPdfOption = pdfSelect.options[1]; // Index 1 for the first option
-
-    // Set the default PDF and display it
-    pdfSelect.value = firstPdfOption.value;
-    pdfViewer.src = firstPdfOption.value + '#toolbar=0';
-    pdfViewer.style.display = 'block';
-
-    pdfSelect.addEventListener('change', function() {
-        const selectedPdf = pdfSelect.value;
-        if (selectedPdf) {
-            pdfViewer.src = selectedPdf + '#toolbar=0';
-            pdfViewer.style.display = 'block';
-        } else {
-            pdfViewer.style.display = 'none';
-        }
-    });
 
 
-    const fullscreenPdfButton = document.getElementById('fullscreen-pdf-button');
-    const fullscreenPdfContainer = document.createElement('div');
-    fullscreenPdfContainer.id = 'fullscreen-pdf-container';
-    fullscreenPdfContainer.innerHTML = `
-        <iframe id="fullscreen-pdf-viewer" src="" frameborder="0"></iframe>
-        <span id="fullscreen-pdf-close">&times;</span>
-    `;
-    document.body.appendChild(fullscreenPdfContainer);
 
-    fullscreenPdfButton.addEventListener('click', function() {
-        const pdfViewerSrc = document.getElementById('pdf-viewer').src;
-        document.getElementById('fullscreen-pdf-viewer').src = pdfViewerSrc;
-        fullscreenPdfContainer.style.display = 'flex';
-    });
+// PDF viewer functionality
+const pdfViewer = document.getElementById('pdf-viewer');
+const pdfSelect = document.getElementById('pdf-select');
 
-    document.getElementById('fullscreen-pdf-close').addEventListener('click', function() {
-        fullscreenPdfContainer.style.display = 'none';
-    });
+// Get the first PDF option
+const firstPdfOption = pdfSelect.options[1]; // Index 1 for the first option
+
+// Set the default PDF and display it
+pdfSelect.value = firstPdfOption.value;
+pdfViewer.src = firstPdfOption.value + '#toolbar=0';
+pdfViewer.style.display = 'block';
+
+pdfSelect.addEventListener('change', function() {
+    const selectedPdf = pdfSelect.value;
+    if (selectedPdf) {
+        pdfViewer.src = selectedPdf + '#toolbar=0';
+        pdfViewer.style.display = 'block';
+    } else {
+        pdfViewer.style.display = 'none';
+    }
+});
+
+const fullscreenPdfButton = document.getElementById('fullscreen-pdf-button');
+const fullscreenPdfContainer = document.createElement('div');
+fullscreenPdfContainer.id = 'fullscreen-pdf-container';
+fullscreenPdfContainer.innerHTML = `
+    <iframe id="fullscreen-pdf-viewer" src="" frameborder="0"></iframe>
+    <span id="fullscreen-pdf-close">&times;</span>
+    <span id="zoom-in">+</span>
+    <span id="zoom-out">-</span>
+`;
+document.body.appendChild(fullscreenPdfContainer);
+
+fullscreenPdfButton.addEventListener('click', function() {
+    const pdfViewerSrc = document.getElementById('pdf-viewer').src;
+    document.getElementById('fullscreen-pdf-viewer').src = pdfViewerSrc;
+    fullscreenPdfContainer.style.display = 'flex';
+});
+
+document.getElementById('fullscreen-pdf-close').addEventListener('click', function() {
+    fullscreenPdfContainer.style.display = 'none';
+});
+
+const fullscreenPdfViewer = document.getElementById('fullscreen-pdf-viewer');
+let zoomLevel = 1;
+
+document.getElementById('zoom-in').addEventListener('click', function() {
+    zoomLevel += 0.1;
+    fullscreenPdfViewer.style.transform = `scale(${zoomLevel})`;
+});
+
+document.getElementById('zoom-out').addEventListener('click', function() {
+    if (zoomLevel > 0.1) {
+        zoomLevel -= 0.1;
+        fullscreenPdfViewer.style.transform = `scale(${zoomLevel})`;
+    }
+});
+
+fullscreenPdfViewer.addEventListener('wheel', function(event) {
+    if (event.deltaY < 0) {
+        zoomLevel += 0.1;
+    } else {
+        zoomLevel -= 0.1;
+    }
+    if (zoomLevel < 0.1) zoomLevel = 0.1;
+    fullscreenPdfViewer.style.transform = `scale(${zoomLevel})`;
+});
+
+
 
 
 
