@@ -29,12 +29,21 @@
             width: 56%;
             text-align: center;
             padding: 4px 10px;
-            font-size: 14px;
+            font-size: 12px;
             background-color: #FFFFFF;
             position: fixed;
             bottom: 0;
             left: 50%;
             transform: translateX(-50%);
+            box-sizing: border-box;
+        }
+
+	.additional-box {
+	    width: 56%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 10px 6px 10px;
             box-sizing: border-box;
         }
 
@@ -252,6 +261,10 @@
         padding: 5px;
     }
 
+    .additional-box {
+        display: none;
+    }
+
     .logo {
         height: 20px;
         margin: 0 2px;
@@ -268,7 +281,7 @@
     footer {
         text-align: center;
         padding: 2px;
-        font-size: 4px;
+        font-size: 10px;
         background-color: #FFFFFF;
         position: fixed;
         bottom: 0;
@@ -509,11 +522,13 @@
     </div>
 </div>
 
-<br><br><br><br><br>
-<header id="pdf-section2">
+<div class="additional-box" id="pdf-section2">
+
     <img src="images/IIMB-Logo.png" alt="IIMB Logo" class="logo">
     <img src="images/JJM-logo.png" alt="JJM Logo" class="logo right-logo">
-</header>
+
+</div>
+
 
 <div class="grey-box" >
     <div class="grey-box-content" >
