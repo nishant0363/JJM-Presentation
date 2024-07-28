@@ -242,133 +242,120 @@
 
 @media (max-width: 1700px) {
 
-	body {
-   	    background-color: red;
-            align-items: center;
-            font-family: Arial, sans-serif;
-            display: flex;
-            flex-direction: column;
-            align-items: left;
-            margin: 0;
-            padding: 5;
-  	}
+    body {
+        /* background-color: red; */
+        font-family: Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: left;
+        margin: 0;
+        padding: 5px;
+    }
 
-        .logo {
-            height: 20px;
-            margin: 0 2px;
-        }
+    .logo {
+        height: 20px;
+        margin: 0 2px;
+    }
 
-        .right-logo {
-            height: 25px;
-        }
+    .right-logo {
+        height: 25px;
+    }
 
     header, footer, .grey-box {
         width: 90%; /* Adjust the width for mobile view */
     }
     
-	footer {
-            text-align: center;
-            padding: 2px 2px;
-            font-size: 4px;
-            background-color: #FFFFFF;
-            position: fixed;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            box-sizing: border-box;
-        }
+    footer {
+        text-align: center;
+        padding: 2px;
+        font-size: 4px;
+        background-color: #FFFFFF;
+        position: fixed;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        box-sizing: border-box;
+    }
 
     .grey-box {
-     
-        padding-left: 10px; /* Remove padding */
-	padding-right: 10px;
-	padding-top: 1px;
-	padding-bottom: 10px;
+        padding: 0 10px 10px;
     }
 
     .grey-box-content {
-        max-width: 30%; /* Allow the content to take full width */
-        padding-right: 2px; /* Remove padding */
-        font-size: 5px; /* Adjust font size */
+        margin-top: 2px;
+        max-width: 30%;
+        padding-right: 2px;
+        font-size: 5px;
     }
 
     .grey-box-pdf {
-        max-width: 100%; /* Allow the image container to take full width */
-	padding-left: 0px;
-	padding-right: 0px;
-	padding-top: 0px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        max-width: 100%;
+        padding: 0;
+        margin-bottom: 0;
     }
- 
+
     .grey-box-image {
-        max-width: 70%; /* Allow the image container to take full width */
+        margin-top: 18px;
+        max-width: 70%;
     }
-   
+
     .link-box {
-            width: 80px;
-            padding: 1px;
-            font-size: 5px;
-            border-radius: 1px;
-            border: 1px solid #ccc;
-            margin: 1px 0;
-            display: inline-block;
-            background-color: #ffffff;
-        }
+        width: 80px;
+        padding: 1px;
+        font-size: 5px;
+        border-radius: 1px;
+        border: 1px solid #ccc;
+        margin: 1px 0;
+        display: inline-block;
+        background-color: #ffffff;
+    }
 
     #pollutant-select {
-            width: 80px;
-            padding: 1px;
-            font-size: 5px;
-            border-radius: 1px;
-            border: 1px solid #ccc;
-            margin-top: 1px;
-        }
+        width: 80px;
+        padding: 1px;
+        font-size: 5px;
+        border-radius: 1px;
+        border: 1px solid #ccc;
+        margin-top: 1px;
+    }
 
-   #slider-image {
-            width: 100%;
-            margin-bottom: 8px;
-        }
+    #slider-image {
+        width: 100%;
+        margin-bottom: 4px;
+    }
 
-  .slider-buttons {
-            display: flex;
-            justify-content: space-between;
-            width: 100%;
-        }
+    .slider-buttons {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
 
-  .slider-buttons button {
-            padding: 0.5px 1px;
-            font-size: 3px;
-            cursor: pointer;
-        }
+    .slider-buttons button {
+        padding: 0.75px 2px;
+        font-size: 4px;
+        cursor: pointer;
+    }
 
-  .grey-box-pdf {
-    	    display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: flex-start;
-            max-width: 100%;
+    .grey-box-pdf iframe {
+        border: none;
+        width: 210px;
+        height: 180px;
+        margin-top: 0;
+        margin-bottom: 2px;
+    }
 
-	}
-
-  .grey-box-pdf iframe {
-   	   border: none;
-	   width: 210px;
-           height: 180px;
-	   padding-left: 0px;
-	   padding-right: 0px;
-	   padding-top: 0px;
-	   padding-bottom: 0px
-	}
-
-   #pdf-select {
-            width: 80px;
-            padding: 1px;
-            font-size: 5.5px;
-            border-radius: 1px;
-            border: 1px solid #ccc;
-            margin-top: 1px;
-        }
-	
-
+    #pdf-select {
+        width: 80px;
+        padding: 1px;
+        font-size: 5.5px;
+        border-radius: 1px;
+        border: 1px solid #ccc;
+        margin-top: 1px;
+    }
 }
 
 
